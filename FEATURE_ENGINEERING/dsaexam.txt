@@ -1,0 +1,124 @@
+struct node{
+    int data;
+    struct node*left;
+    struct node* right;
+
+}
+function to create the node 
+    stuct node*createnode(int data);{
+        struct node* n;
+        n=(struct node*) malloc (sizeof(struct node))
+        n-> data=data;
+        n->left=NULL;
+        n->right=NULL;
+        return n;
+    }
+
+    function to count no of nodes in a binary tree
+    int countnodes(struct node * root){
+        if(root==NULL){
+            return 0
+        }
+        return 1+countnodes(root->left)+countnodes(root->right)
+    }
+
+    function to count no of leaf nodes in the binary tree 
+    as we know a leaf node has bothe its left and right pointer as NULL
+
+    int countleafnodes(struct node*root){
+        if(root==NULL){
+            return 0;
+        }
+        if (root->left==NULL && root->right==NULL){
+            return ;
+        }
+         return countleafnodes(root->left)+countleafnodes(root->right);
+    }
+
+    func to count the height of the tree 
+    int height(struct node * root){
+        if(root==null){
+            return 0;
+        }
+        leftheight=height(root->left);
+        rightheight=height(root->right);
+
+        return(leftheight>rightheight ? leftheight:rightheight)+1;
+
+    }
+
+    preorder traversal (root->leftsubtree->rightsubtree)
+    fucn for preorder traversal 
+
+    void preorder(struct node*root){
+        if(root==NULL){
+            return ;
+
+        }
+        if (root!=NULL){
+            printf("%d",root->data);
+            preorder(root ->left);
+            preorder(root ->right);
+        }
+    }
+    postorder traversal (leftsubtree -> rightsubtree->root)
+    func to implement postorder traversal 
+    void postorder(struct node*root){
+        if(root==NULL){
+            return;
+
+        }
+        if(root!=NULL){
+            postorder(root->left);
+            postorder(root->right);
+            printf("%d",root->data);
+        }
+    }
+
+    inorder traversal (leftsubtree ->root->rightsubtree)
+    func for inorder traversal 
+    void inorder(struct node*root){
+        if(root==NULL){
+            return;
+        }
+
+        if(root!=NULL){
+            inorder(root->left)
+            print("%d",root->data)
+            inorder(root->right)    
+        }
+    }
+    check wether the given tree is a bst or not 
+    int isbst(struct node*root){
+        static struct node*prev=NULL
+        if(root==NULL){
+            return 0;
+        }
+        if(root!=NULL){
+            if(!isbst(root->left)){
+                return 0;
+            }
+            if(prev!=NULL && root->data<=prev->data){
+                return 0;
+            }
+            prev=root
+            return(isbst(root->right))
+
+        }
+    }
+    searching in a bst tree 
+    struct node * search(struct node*root,int key ){
+        if(root==NULL){
+            return NULL;
+
+        }
+        if(root==key){
+            return key ;
+        }
+        else if(root->data > key){
+            return search(root->left);
+
+        }
+        else
+            return search(root->right)
+    }
