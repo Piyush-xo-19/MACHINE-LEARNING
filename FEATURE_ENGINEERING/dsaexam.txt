@@ -170,6 +170,13 @@ function to create the node
         return head;
 
     }
+    DELETION IN LINKED LIST 
+    struct node *deletebeigning(struct node *head){
+       struct node*p=head;
+       head=head->next;
+       free(p);
+       return head; 
+    }
 
     })
     int main(){
