@@ -177,6 +177,21 @@ function to create the node
        free(p);
        return head; 
     }
+    struct node *deletefromindex(struct node*head,int index){
+        struct node*p=head;
+        struct node*q=head->next
+        while(i!=index-1){
+            p=p->next;
+            q=q->next;
+            i++
+        }
+        p->next=q->next;
+        free(q);
+        return head;
+
+    }
+      
+    
 
     })
     int main(){
