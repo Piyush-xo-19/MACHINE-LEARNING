@@ -190,7 +190,25 @@ function to create the node
         return head;
 
     }
-      
+    struct node *deletefromend(struct node*head){
+        struct node*p=head;
+        struct node*q=head;
+        while(p->next!=NULL){
+            q=p;
+            p=p->next
+        }
+        struct node *deletefromend(struct node*head){
+        struct node*p=head;
+        struct node*q=head;
+        while(p->next=NULL){
+            p=p->next
+            q=q->next->p
+        }
+        q->next=NULL
+        free(p);
+        return head;
+        
+    }  
     
 
     })
