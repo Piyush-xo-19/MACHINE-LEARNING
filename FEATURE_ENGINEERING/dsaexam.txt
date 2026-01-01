@@ -145,7 +145,7 @@ function to create the node
         head=ptr;
         return head;
     }
-    struct Node *insertatindex(struct node*head,int data,int index{
+    struct Node *insertatindex(struct node*head,int data,int index){
         struct node*ptr1
         ptr=(struct *node)malloc(sizeof(struct node));
         struct node *p=head;
@@ -156,7 +156,7 @@ function to create the node
         ptr->data=data
         ptr->next=p->next;
         p->next=ptr
-        return head;
+        return head;}  
 
     struct node *insertatend(struct node*head,int data){
         struct node*ptr1
@@ -197,21 +197,12 @@ function to create the node
             q=p;
             p=p->next
         }
-        struct node *deletefromend(struct node*head){
-        struct node*p=head;
-        struct node*q=head;
-        while(p->next=NULL){
-            p=p->next
-            q=q->next->p
-        }
-        q->next=NULL
-        free(p);
-        return head;
+        
         
     }  
     
 
-    })
+    
     int main(){
         struct node*head;
         struct node*second;
@@ -233,3 +224,48 @@ function to create the node
         display(head)
     }
     return 0;
+
+    STACK OPERATIONS
+    #include <stdio.h>
+
+    define max 100;
+    int stack [max];
+    int top=-1
+
+    void push(int data)
+    {
+        if(top==Max-1){
+            printf("stack is overflow");
+            return 0;
+        }
+        stack[++top]=data
+        printf("element pushed");
+    }
+    int pop(){
+        if(top==-1){
+            printf("stack underflow");
+            
+        }
+        return stack[top--];
+
+    }
+    int isempty(){
+        if(top==-1){
+            return 1;
+        }
+    }
+
+    int peek(){
+        return stack[top];
+    }
+    void display(int stack[],int top)
+    {
+        if(top==-1)
+        {
+            printf("stack is empty");
+        }
+        for(int i =0, i<=top,i++)
+        {
+            printf("%d",stack[i]);
+        }
+    }
